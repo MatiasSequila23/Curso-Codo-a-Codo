@@ -6,7 +6,7 @@ const valor_Venta = 200;
 function calcular() {
     var total = 0;
     var select = parseInt(document.querySelector("#select_Categoria").value);
-    var cantidad = parseInt(document.querySelector("#input_Cantidad").value);
+    var cantidad = document.querySelector("#input_Cantidad").value;
     switch (select) {
         case 1:
             total= calcular_Monto(valor_Venta,descuento_Estudiantes,cantidad);
@@ -31,8 +31,14 @@ function Clear() {
     cerate_Select();
 }
 function calcular_Monto(valor_Venta, descuento, cantidad) {
-    var valor = ((valor_Venta * cantidad) * descuento) / 100;
+    if (cantidad!="") {
+        var valor = ((valor_Venta * parseInt(cantidad)) * descuento) / 100;
     return (valor_Venta * cantidad) - valor;
+    }
+    else{
+        return 0;
+    }
+    
 }
 function cerate_Select() {
  
@@ -55,8 +61,7 @@ function cerate_Select() {
  
     select.appendChild(option1);
     select.appendChild(option2);
-    select.appendChild(option3);
-     
+    select.appendChild(option3); 
 }
 window.onload = function () {
     document.getElementById("h5_Desc_Estudiante").innerText = descuento_Estudiantes + "%";
