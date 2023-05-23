@@ -37,8 +37,7 @@ function calcular_Monto(valor_Venta, descuento, cantidad) {
     }
     else{
         return 0;
-    }
-    
+    } 
 }
 function cerate_Select() {
  
