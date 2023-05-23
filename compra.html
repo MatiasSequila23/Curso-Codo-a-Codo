@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra de tickets</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/Style.css">
+  <script>
+    // Cargar el encabezado
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('header').innerHTML = data;
+      });
+    // Cargar el pie de página
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.querySelector('footer').innerHTML = data;
+      });
+  </script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+  </header>
+  <!-- MAIN -->
+  <main role="main" class="content">
+    <div class="container-body">
+      <div class="text-center">
+        <div class="rows" style="display: flex;">
+          <div class="col">
+            <div class="card border border-primary">
+              <div class="card-body">
+                <h5 class="card-title">Estudiante</h5>
+                <label for="">Tiene un descuento</label>
+                <h5 id="h5_Desc_Estudiante"></h5>
+                <small class="text-muted">* presentar documentación</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border border-info">
+              <div class="card-body">
+                <h5 class="card-title">Trainee</h5>
+                <label for="">Tiene un descuento</label>
+                <h5 id="h5_Desc_Trainee"></h5>
+                <small class="text-muted">* presentar documentación</small>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border border-warning  ">
+              <div class="card-body">
+                <h5 class="card-title">Junior</h5>
+                <label for="">Tiene un descuento</label>
+                <h5 id="h5_Desc_Junior"></h5>
+                <small class="text-muted">* presentar documentación</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label class="text-muted" for="">VENTA</label>
+        <H3 id="h3valorVenta"></H3>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+        </div>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Correo" aria-label="Correo">
+        </div>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="col">
+          <label>Cantidad</label>
+          <input type="text" id="input_Cantidad" class="form-control" placeholder="cantidad" aria-label="cantidad">
+        </div>
+        <div class="col">
+          <label for="">Categoria</label>
+          <select name="" id="select_Categoria" class="form-control">
+            
+          </select>
+        </div>
+      </div>
+
+      <div class="input-group input-group-sm mb-3" id="div_Alert" style="padding-left: 15px; padding-right: 15px;">
+        <div class="alert alert-primary col" role="alert">
+          <label for="" id="total_Pagar"></label>
+        </div>
+      </div>
+
+      <div class="input-group input-group-sm mb-3">
+        <div class="col">
+          <button onclick="Clear()" class="form-control btn-success "> Borrar</button>
+        </div>
+        <div class="col">
+          <button onclick="calcular()" type="button" class="form-control btn-success "> Resumen</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <!-- FOOTER -->
+  <footer class=" text-center  text-lg-start" style="background-color: #052e5aeb;"></footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
